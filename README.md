@@ -1,7 +1,6 @@
 # Audit de Sécurité Android — InsecureBankv2
 
 > **Travaux Pratiques — Sécurité Mobile**  
-> Programme GS4 — ENSA Marrakech  
 > Outil : Drozer Framework | Cible : InsecureBankv2 (Android 8.1 / API 27)
 
 ---
@@ -12,7 +11,6 @@
 audit-insecurebankv2/
 ├── rapport_final.md          ← Rapport complet d'audit
 ├── triage.csv                ← Tableau de triage des vulnérabilités
-├── checklist_fin.md          ← Checklist de conformité
 ├── preuves/
 │   ├── activities/           ← Activités exposées
 │   ├── services/             ← Services (surface nulle)
