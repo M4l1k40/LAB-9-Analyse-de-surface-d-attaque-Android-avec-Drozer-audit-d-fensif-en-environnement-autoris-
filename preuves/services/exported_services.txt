@@ -1,0 +1,14 @@
+================================================================================
+DROZER - ANALYSE DES SERVICES EXPORTÉS
+Application : com.android.insecurebankv2 (InsecureBankv2)
+Date        : [DATE_ANALYSE]
+Commande    : dz> run app.service.info -a com.android.insecurebankv2
+================================================================================
+
+Package: com.android.insecurebankv2
+
+  [RÉSULTAT] Aucun service exporté trouvé.
+
+================================================================================
+RÉSUMÉ : 0 service exporté — Surface d'attaque nulle sur ce vecteur
+================================================================================

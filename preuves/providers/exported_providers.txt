@@ -1,0 +1,50 @@
+================================================================================
+DROZER - ANALYSE DES CONTENT PROVIDERS EXPORTÉS
+Application : com.android.insecurebankv2 (InsecureBankv2)
+Date        : [DATE_ANALYSE]
+Commandes   :
+  dz> run app.provider.info -a com.android.insecurebankv2 -p
+  dz> run scanner.provider.finduris -a com.android.insecurebankv2
+  dz> run app.provider.finduri com.android.insecurebankv2
+================================================================================
+
+[app.provider.info]
+--------------------
+Package: com.android.insecurebankv2
+  Authority     : com.android.insecurebankv2.TrackUserContentProvider
+  Read Permission  : null   ← AUCUNE PROTECTION
+  Write Permission : null   ← AUCUNE PROTECTION
+  Content Provider : com.android.insecurebankv2.TrackUserContentProvider
+  Multiprocess Allowed : False
+  Grant Uri Permissions : False
+
+[scanner.provider.finduris]
+-----------------------------
+Scanning com.android.insecurebankv2...
+No response from content URI: content://com.android.insecurebankv2.TrackUserContentProvider
+No response from content URI: content://com.android.insecurebankv2.TrackUserContentProvider/
+Got a response from content Uri: content://com.android.insecurebankv2.TrackUserContentProvider/trackerusers
+Got a response from content Uri: content://com.android.insecurebankv2.TrackUserContentProvider/trackerusers/
+
+For sure accessible content URIs:
+  content://com.android.insecurebankv2.TrackUserContentProvider/trackerusers
+
+[app.provider.finduri]
+------------------------
+Scanning com.android.insecurebankv2...
+content://com.android.insecurebankv2.TrackUserContentProvider
+content://com.android.insecurebankv2.TrackUserContentProvider/
+content://com.android.insecurebankv2.TrackUserContentProvider/trackerusers
+
+================================================================================
+RÉSUMÉ : 1 Content Provider exporté — Lecture ET écriture sans permission
+         URI accessible confirmée : /trackerusers
+================================================================================
+
+NOTE DE CORRECTION :
+--------------------
+Une première analyse avait incorrectement conclu à l'absence de Content Provider.
+La commande scanner.provider.finduris (capture 13) a confirmé l'existence et
+l'accessibilité du provider TrackUserContentProvider.
+Cette découverte est classifiée CRITIQUE (V4 dans triage.csv).
+================================================================================

